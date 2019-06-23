@@ -6,8 +6,28 @@ Vizualization of concentration curves for chemical reactions. Solved using a fin
 This package only requires `plotly` and `numpy` and is written in jupyter notebooks.
 
 ## How to Use
-Usage is explained in the jupyter notebook. Enter in lists of tuples, and the function will generate a plotly plot in another tab. 
+For the system of chemical reactions below:
+* A + 2B &rarr; C 
+* C &rarr; A + 2B
+* A + C &rarr; D
 
-## Future Work
-* Replace hard-coded components list
-* Make input formatting easier
+The input to liquid_react would be as follows:
+```python
+liquid_react([(-1,-2,1,0),(1,2,-1,0),(-1,0,-1,1)], # Stoichiometric breakdown of reactants and products
+             [(1,1,0,0),(0,0,1,0),(1,0,1,0)],      # Powers of each component (A,B,C,D) for the rate equations
+             [10,5,0,0],                           # Initial concetrations of each component
+             [0.05,0.02,0.03]                      # Reaction rate (k) constant for each reaction
+            )
+```
+Tuples are required for each set of stoichiometric and exponential parameters to demarcate separate reactions.
+
+```
+concs, times = liquid_react([(-1,-2,1,0),(1,2,-1,0),(-1,0,-1,1)],
+                            [(1,1,0,0),(0,0,1,0),(1,0,1,0)],
+                            [10,5,0,0],
+                            [0.05,0.02,0.03],
+                           duration=30)
+```
+```
+plot_concs(concs,times)
+```
