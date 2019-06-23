@@ -13,8 +13,8 @@ For the system of chemical reactions below:
 
 The input to liquid_react would be as follows:
 ```python
-liquid_react([(-1,-2,1,0),(1,2,-1,0),(-1,0,-1,1)], # Stoichiometric breakdown of reactants and products
-             [(1,1,0,0),(0,0,1,0),(1,0,1,0)],      # Powers of each component (A,B,C,D) for the rate equations
+liquid_react([(-1,-2,1,0),(1,2,-1,0),(-1,0,-1,1)], # Stoichiometry of reactants and products
+             [(1,1,0,0),(0,0,1,0),(1,0,1,0)],      # Powers of each component (A,B,C,D) in rate equations
              [10,5,0,0],                           # Initial concetrations of each component
              [0.05,0.02,0.03]                      # Reaction rate (k) constant for each reaction
             )
