@@ -31,3 +31,4 @@ concs, times = liquid_react([(-1,-2,1,0),(1,2,-1,0),(-1,0,-1,1)],
 ```
 plot_concs(concs,times)
 ```
+![Plot of the above code.](Reaction.png)
